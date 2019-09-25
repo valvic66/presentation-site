@@ -4,22 +4,22 @@ import { default as classnames } from 'classnames';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export interface IBox {
+export interface IHome {
   className?: string;
 }
 
-const BoxWrapper = styled.div`
+const HomeWrapper = styled.div`
   border: 1px black solid;
 `;
 
-export const Box: React.FC<IBox> = (props: IBox) => {
+export const Home: React.FC<IHome> = (props: IHome) => {
   const boxClassNames = classnames(props.className, 'js-box');
   
   return (
-    <BoxWrapper className = {boxClassNames}>
-      <div>Box</div>
+    <HomeWrapper className = {boxClassNames}>
+      <div>Home</div>
 
-      <Link to='/'>Home</Link>
-    </BoxWrapper>
+      <Link to='/box/'>Box</Link>
+    </HomeWrapper>
   );
 }
