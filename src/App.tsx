@@ -2,7 +2,9 @@ import React from "react";
 import "./App.css";
 import { store } from "./store/store";
 import { addItem, removeItemById } from "./actions/fetchItems";
-
+import { Route, Switch } from 'react-router-dom';
+import { Box, IBox } from './components/Box';
+ 
 const item = {
   id: 1,
   name: "Presentation Site",
@@ -27,9 +29,13 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <img src="icon-menu-alt.svg" />
-      <header className="App-header">
-        <h1>Hello Vali to your presentation site rebuilt!</h1>
-      </header>
+      {/* <Box className="new-class" /> */}
+      <Switch>
+        <Route
+          path="/box" 
+          render={(...props) => <Box className='new-class' />} 
+        />
+      </Switch>
     </div>
   );
 };
