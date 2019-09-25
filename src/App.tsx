@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 import { store } from "./store/store";
 import { addItem, removeItemById } from "./actions/fetchItems";
-import { Route, Switch } from 'react-router-dom';
-import { Box, IBox } from './components/Box';
+import { Route, Link } from 'react-router-dom';
+import { Box } from './components/Box';
+import { Home } from './components/Home';
  
 const item = {
   id: 1,
@@ -28,14 +29,19 @@ console.info('removed from store', store.getState());
 const App: React.FC = () => {
   return (
     <div className="App">
-      <img src="icon-menu-alt.svg" />
-      {/* <Box className="new-class" /> */}
-      <Switch>
-        <Route
-          path="/box" 
-          render={(...props) => <Box className='new-class' />} 
-        />
-      </Switch>
+      <img src="icon-menu-alt.svg" alt="svg" />
+
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/box/">Box</Link>
+        </li>
+      </ul>
+
+      <Route path='/' exact component={Home} />
+      <Route path='/box' render={(props) => <Box className="new-class" />} />
     </div>
   );
 };
