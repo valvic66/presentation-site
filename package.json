@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://valvic66.github.io/presentation-site",
   "dependencies": {
+    "@material-ui/core": "^4.4.3",
     "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.2",

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { default as classnames } from 'classnames';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 export interface IHome {
   className?: string;
@@ -18,6 +19,8 @@ export const Home: React.FC<IHome> = (props: IHome) => {
   return (
     <HomeWrapper className = {boxClassNames}>
       <div>Home</div>
+
+      <Button variant="contained" color="primary">Tested material-ui</Button>
 
       <Link to='/box/'>Box</Link>
     </HomeWrapper>
