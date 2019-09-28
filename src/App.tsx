@@ -31,15 +31,6 @@ const App: React.FC = () => {
     <div className="App">
       <img src="icon-menu-alt.svg" alt="svg" />
 
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/box/">Box</Link>
-        </li>
-      </ul>
-
       <Route path='/' exact component={Home} />
       <Route path='/box' render={(props) => <Box className="new-class" />} />
     </div>
