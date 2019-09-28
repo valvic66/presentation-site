@@ -4,6 +4,7 @@ import { default as classnames } from 'classnames';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import { CardGrid } from './card-grid/CardGrid';
 
 export interface IHome {
   className?: string;
@@ -18,11 +19,15 @@ export const Home: React.FC<IHome> = (props: IHome) => {
   
   return (
     <HomeWrapper className = {boxClassNames}>
-      <div>Home</div>
-
-      <Button variant="contained" color="primary">Tested material-ui</Button>
-
-      <Link to='/box/'>Box</Link>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/box/">Box</Link>
+        </li>
+      </ul>
+      <CardGrid />
     </HomeWrapper>
   );
 }
